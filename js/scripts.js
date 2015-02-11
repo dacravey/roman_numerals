@@ -2,8 +2,8 @@ var romanNums = function(arabicNumber){
 
   var totalNumber = arabicNumber;
 
-  var values = [1000, 500];
-  var symbols = ["M", "D"];
+  var values = [1000, 500, 100, 50, 10, 5, 1];
+  var symbols = ["M", "D", "C", "L", "X", "V", "I"];
   var results = "";
 
 
