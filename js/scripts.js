@@ -9,18 +9,18 @@ var romanNums = function(arabicNumber){
 
 
   for(var i = 0; i < values.length; i += 1){
-     if(totalNumberString[0] === '9'){
-debugger;
-       results = results.concat(symbols[i+1]).concat(symbols[i-1]);
-       totalNumber = totalNumber - (9 * values[i+1]);
-       totalNumberString = totalNumber.toString();
-     }else{
-        while(Math.floor(totalNumber/values[i]) > 0){
-            totalNumber = totalNumber - values[i];
-            totalNumberString = totalNumber.toString();
-            results = results.concat(symbols[i]);
-          }
-      }
+    while(Math.floor(totalNumber/values[i]) > 0){
+          totalNumber = totalNumber - values[i];
+          results = results.concat(symbols[i]);
+        }
+
+  }
+
+  var bad = ["DCCCC","CCCC","LXXXX", "XXXX", "VIIII", "IIII"];
+  var good = ["CM", "CD", "XC", "XL", "IX","IV"];
+
+  for(var i= 0; i < bad.length; i++){
+    results = results.replace(bad[i],good[i]);
   }
 
   return results;
